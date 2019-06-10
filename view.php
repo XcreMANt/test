@@ -3,6 +3,14 @@ class View
 {
     protected $data;
 
+    /**
+     * @return mixed
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
     public function __construct()
     {
     }
@@ -15,8 +23,9 @@ class View
     public function display($template)
     {
         if(array_key_exists($template, $this->data)) {
-            foreach($this->data[$template] as $template)
-            echo $template;
+            echo $this->data[$template];
+//            foreach($this->data[$template] as $template)
+//            echo $template;
         } else {
             echo ' display ключ не найден';
         }

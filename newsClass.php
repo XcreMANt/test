@@ -1,5 +1,8 @@
 <?php
-class GuestBook
+
+require __DIR__.'/articleClass.php';
+
+class News
 {
     protected $data;
     protected $path;
@@ -19,7 +22,15 @@ class GuestBook
         if($this->data === []) {
             return null;
         }
-        return $this->data;
+
+        $ret = [];
+        $article_id = 1;
+        foreach ($this->data as $item) {
+            $ret[] = new Article($article_id, $item);
+            $article_id++;
+        }
+
+        return $ret;
     }
 
     public function append($text)
