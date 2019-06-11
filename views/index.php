@@ -17,7 +17,7 @@
 
 <?php foreach ($data as $item) {
 
-    $view->assign($item->getId(), $item->getText());
+    $view->assign($item->getId(), $item->getShortText());
     $view->render($item->getId());
     ?> <div class="article">
         <a href="/article.php?id=<?php echo $item->getId(); ?>">Новость № <?php echo $item->getId(); ?> </a><br>
