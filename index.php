@@ -1,19 +1,10 @@
 <?php
 
-include __DIR__.'/view.php';
-include __DIR__.'/guestbook.php';
 
-$view = new View();
-//$view->assign('qqq','www');
-//$view->display('qqq');
 
-//echo $view->render('qqq');
+//require __DIR__.'/view.php';
 
-$gb = new GuestBook('db');
-$view->assign('db', $gb->getData());
+require __DIR__.'/dbrepo.php';
 
-$view->display('db');
 
-//$gb->append('uuuuuuuuuuuuuuuuu');
-//$gb->save();
-
+$view->display(__DIR__.'/views/allnews.php');

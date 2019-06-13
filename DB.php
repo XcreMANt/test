@@ -22,13 +22,21 @@ class DB
     public function execute($sql)
     {
         $sth = $this->dbh->prepare($sql);
-
         return $sth->execute();
     }
 
     public function query($sql, $data)
     {
         $sth = $this->dbh->prepare($sql);
-        $sth->execute($data);
+        return $sth->execute($data);
+
+    }
+
+    public function getData($sql)
+    {
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute();
+        $data = $sth->fetchAll();
+        return $data;
     }
 }
