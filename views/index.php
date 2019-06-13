@@ -15,16 +15,18 @@
 
 <body>
 
-<?php foreach ($data as $item) {
+<?php
 
-    $view->assign($item->getId(), $item->getShortText());
-    $view->render($item->getId());
+foreach ($data[$name] as $item) {
+
+//    $view->assign($item->getId(), $item->getShortText());
+//    $view->render($item->getId());
     ?> <div class="article">
         <a href="/article.php?id=<?php echo $item->getId(); ?>">Новость № <?php echo $item->getId(); ?> </a><br>
 
         <?php
-//            echo $item->getShortText();
-        $view->display($item->getId());
+            echo $item->getShortText();
+//        $view->display($item->getId());
         ?> </div> <?php
     }
 ?>

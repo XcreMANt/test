@@ -1,5 +1,8 @@
 <?php
+require __DIR__.'/newsClass.php';
 require __DIR__.'/view.php';
 $news = new News('db');
 $view = new View();
-$data = $news->getData();
+
+$inf = $news->getData();
+$view->assign('article',$inf);

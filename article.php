@@ -1,42 +1,8 @@
-<html>
+<?php
 
-<head>
-    <title>Article</title>
-    <style>
-        .article {
-            border: solid 1px red;
-            margin-bottom:10px;
-            padding: 10px;
-            width: 50%;
+require __DIR__.'/somecode.php';
 
-        }
-    </style>
-</head>
-
-<body>
-
-<div class="article">
-    <?php
-
-    require __DIR__.'/newsClass.php';
-    require __DIR__.'/somecode.php';
-
-    foreach ($data as $item) {
-        if ($item->getId() == $_GET['id']) {
-            $view->assign($item->getId(), $item->getText());
-            $view->render($item->getId());
-            ?>
-            Новость № <?php echo $item->getId(); ?> <br>
-
-            <?php $view->display($item->getId()); ?> <?php
-        }
-    }
-    ?>
-
-</div>
-
-
-</body>
-
-
-</html>
+$data = $view->getData();
+//var_dump($data);
+//$view->assign();
+$view->display(__DIR__.'/views/article.php');

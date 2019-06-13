@@ -2,6 +2,15 @@
 class View
 {
     protected $data;
+    protected $name;
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 
     /**
      * @return mixed
@@ -18,17 +27,22 @@ class View
     public function assign($name, $value)
     {
         $this->data[$name] = $value;
+        $this->name = $name;
     }
 
     public function display($template)
     {
-        if(array_key_exists($template, $this->data)) {
-            echo $this->data[$template];
-//            foreach($this->data[$template] as $template)
-//            echo $template;
-        } else {
-            echo ' display ключ не найден';
-        }
+        $data = $this->getData();
+        $name = $this->getName();
+        include $template;
+
+//        if(array_key_exists($template, $this->data)) {
+//            echo $this->data[$template];
+////            foreach($this->data[$template] as $template)
+////            echo $template;
+//        } else {
+//            echo ' display ключ не найден';
+//        }
 //        var_dump($this->data[$template]);
     }
 
