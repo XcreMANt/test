@@ -20,7 +20,7 @@
 foreach ($data[$name] as $item) {
 
     ?> <div class="article">
-        <a href="/article.php?id=<?php echo $item->getId(); ?>">Новость № <?php echo $item->getId(); ?> </a><br>
+        <a href="/articledb.php?id=<?php echo $item->getId(); ?>">Новость № <?php echo $item->getId(); ?> </a><br>
 
         <ul>
             <li>id: <?php echo $item->getId(); ?> </li>

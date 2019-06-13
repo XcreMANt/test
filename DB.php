@@ -16,7 +16,7 @@ class DB
     {
        $this->dbh = new PDO($this->dsn, $this->user, $this->password);
        $this->dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-       var_dump($this->dbh);
+//       var_dump($this->dbh);
     }
 
     public function execute($sql)
