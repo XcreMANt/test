@@ -1,10 +1,5 @@
 <?php
 
+require __DIR__.'/autoload.php';
 
-
-//require __DIR__.'/view.php';
-
-require __DIR__.'/dbrepo.php';
-
-
-$view->display(__DIR__.'/views/allnews.php');
+$data = $db->query('select * from articles where title=:title', [':title' => 'about']);

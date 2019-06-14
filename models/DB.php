@@ -1,5 +1,7 @@
 <?php
 
+namespace Models;
+
 class DB
 {
 
@@ -12,9 +14,9 @@ class DB
     public $password = 'root';
     public $dbh;
 
-    public function __construct()
+    public function __construct($dsn, $user, $password)
     {
-       $this->dbh = new PDO($this->dsn, $this->user, $this->password);
+       $this->dbh = new PDO($dsn, $user, $password);
        $this->dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 //       var_dump($this->dbh);
     }
@@ -28,15 +30,9 @@ class DB
     public function query($sql, $data)
     {
         $sth = $this->dbh->prepare($sql);
-        return $sth->execute($data);
+        $sth->execute($data);
+        return $sth->fetchAll();
 
     }
 
-    public function getData($sql)
-    {
-        $sth = $this->dbh->prepare($sql);
-        $sth->execute();
-        $data = $sth->fetchAll();
-        return $data;
-    }
 }
