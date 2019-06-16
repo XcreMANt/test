@@ -2,22 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7385a3f-b4a4-4f8a-bee5-89d126ee9cec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Models/ArticleList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/schedule.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gallery.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schedule.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Gallery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Schedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Gallery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/About.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/SheduleList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/gallery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Schedule.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DB.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/article.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/About.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/photo.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Gallery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Schedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/gallery.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/schedule.php" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,10 +34,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/About.php">
+        <entry file="file://$PROJECT_DIR$/Views/article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -46,43 +46,79 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="32" lean-forward="true" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controllers/View.php">
+        <entry file="file://$PROJECT_DIR$/schedule.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+            <state relative-caret-position="180">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/autoload.php">
+        <entry file="file://$PROJECT_DIR$/Models/Article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="30">
+              <caret line="2" column="17" lean-forward="true" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/Gallery.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/Image.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gallery.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/schedule.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/ArticleList.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="17" selection-end-line="24" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config.php">
+        <entry file="file://$PROJECT_DIR$/Views/gallery.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Models/DB.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="660">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
             </state>
           </provider>
         </entry>
@@ -124,10 +160,26 @@
         <option value="$PROJECT_DIR$/controllers/view.php" />
         <option value="$PROJECT_DIR$/Models/DB.php" />
         <option value="$PROJECT_DIR$/Controllers/view.php" />
-        <option value="$PROJECT_DIR$/Controllers/View.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/autoload.php" />
         <option value="$PROJECT_DIR$/config.php" />
+        <option value="$PROJECT_DIR$/Views/About.php" />
+        <option value="$PROJECT_DIR$/Views/about.php" />
+        <option value="$PROJECT_DIR$/Models/Article.php" />
+        <option value="$PROJECT_DIR$/Controllers/View.php" />
+        <option value="$PROJECT_DIR$/Models/Schedule.php" />
+        <option value="$PROJECT_DIR$/Models/SheduleList.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/Controllers/Schedule.php" />
+        <option value="$PROJECT_DIR$/Schedule.php" />
+        <option value="$PROJECT_DIR$/schedule.php" />
+        <option value="$PROJECT_DIR$/Models/Articles.php" />
+        <option value="$PROJECT_DIR$/Models/ArticleList.php" />
+        <option value="$PROJECT_DIR$/Models/Gallery.php" />
+        <option value="$PROJECT_DIR$/Models/Image.php" />
+        <option value="$PROJECT_DIR$/gallery.php" />
+        <option value="$PROJECT_DIR$/Views/article.php" />
+        <option value="$PROJECT_DIR$/Views/schedule.php" />
+        <option value="$PROJECT_DIR$/Views/gallery.php" />
       </list>
     </option>
   </component>
@@ -148,11 +200,6 @@
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
@@ -179,7 +226,11 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/controllers" />
       <recent name="$PROJECT_DIR$/models" />
     </key>
@@ -213,6 +264,7 @@
       <workItem from="1560330431968" duration="4033000" />
       <workItem from="1560410848014" duration="23561000" />
       <workItem from="1560596419326" duration="3612000" />
+      <workItem from="1560675363225" duration="22526000" />
     </task>
     <task id="LOCAL-00001" summary="php #1 lesson #6 v2">
       <created>1560169940163</created>
@@ -239,17 +291,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81729000" />
+    <option name="totallyTimeSpent" value="116535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1006" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26947704" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27267876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295325" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -334,7 +386,8 @@
     <MESSAGE value="php #1 lesson #6 v2" />
     <MESSAGE value="php #1 lesson #7 v2" />
     <MESSAGE value="php #1 lesson #7 v3 правки по 6 уроку (класс View)" />
-    <option name="LAST_COMMIT_MESSAGE" value="php #1 lesson #7 v3 правки по 6 уроку (класс View)" />
+    <MESSAGE value="php #1 lesson #8 v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="php #1 lesson #8 v3" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/views/somecode.php" />
@@ -368,55 +421,17 @@
     <entry file="file://$PROJECT_DIR$/articledbClass.php" />
     <entry file="file://$PROJECT_DIR$/views/allnews.php" />
     <entry file="file://$PROJECT_DIR$/views/articledb.php" />
-    <entry file="file://$PROJECT_DIR$/Controllers/Admin.php">
+    <entry file="file://$PROJECT_DIR$/admin.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Admin.php">
+    <entry file="file://$PROJECT_DIR$/Views/admin.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Schedule.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Gallery.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Article.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Schedule.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Photo.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/Schedule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/Gallery.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/DB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/About.php">
+    <entry file="file://$PROJECT_DIR$/Models/Photo.php" />
+    <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -427,17 +442,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/Models/SheduleList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="32" lean-forward="true" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
+    <entry file="file://$PROJECT_DIR$/Controllers/View.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/DB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Schedule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Schedule.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schedule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Gallery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="17" lean-forward="true" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/schedule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/ArticleList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="17" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/gallery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
         </state>
       </provider>
     </entry>
