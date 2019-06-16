@@ -27,6 +27,7 @@
 <div class="header">
     <span class="headelem"><a href="/index.php">Главная</a></span>
     <span class="headelem"><a href="/schedule.php">Расписание</a></span>
+    <span class="headelem"><a href="/admin.php">Админка</a></span>
 </div>
 
 <?php

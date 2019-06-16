@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>News</title>
+    <title>Schedule</title>
     <style>
         .schedule {
             border: solid 1px blue;
@@ -25,6 +25,7 @@
 <div class="header">
     <span class="headelem"><a href="/index.php">Главная</a></span>
     <span class="headelem"><a href="/gallery.php">Галерея</a></span>
+    <span class="headelem"><a href="/admin.php">Админка</a></span>
 </div>
 <?php
 

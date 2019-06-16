@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>News</title>
+    <title>About</title>
     <style>
         .article {
             border: solid 1px green;
@@ -25,6 +25,7 @@
 <div class="header">
     <span class="headelem"><a href="/gallery.php">Галерея</a></span>
     <span class="headelem"><a href="/schedule.php">Расписание</a></span>
+    <span class="headelem"><a href="/admin.php">Админка</a></span>
 </div>
 <?php
 

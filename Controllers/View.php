@@ -22,6 +22,7 @@ class View
 
     public function render($template)
     {
+        var_dump($this->data);
         ob_start();
         extract($this->data, EXTR_OVERWRITE);
         include $template;
@@ -32,7 +33,9 @@ class View
 
     public function display($template)
     {
-        echo $this->render($template);
+        extract($this->data, EXTR_OVERWRITE);
+        include $template;
+//        echo $this->render($template);
     }
 
 }
