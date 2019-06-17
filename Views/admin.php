@@ -45,6 +45,11 @@
 foreach ($admin['about'] as $item) {
     ?> <div class="article">
             <?php echo $item->getText(); ?>
+        <form action="admin.php" method="post" name="form_about">
+            <input type="hidden" name="table_name" value="about">
+            <input type="hidden" name="id" value="<?php echo $item->getId(); ?>">
+            <input type="submit" name="edit" value="Edit">
+        </form>
        </div> <?php
 }
 
@@ -55,13 +60,28 @@ foreach ($admin['schedule'] as $item) {
                 <li>Отправление: <?php echo $item->getDeparture(); ?> </li>
                 <li>Прибытие: <?php echo $item->getArrival(); ?> </li>
             </ul>
+        <form action="admin.php" method="post" name="form_schedule">
+            <input type="hidden" name="table_name" value="schedule">
+            <input type="hidden" name="id" value="<?php echo $item->getId(); ?>">
+            <input type="submit" name="del" value="Del">
+            <input type="submit" name="edit" value="Edit">
+            <input type="submit" name="add" value="Add">
+        </form>
         </div> <?php
 }
 
 foreach ($admin['gallery'] as $item) {
     ?> <div class="image">
            <img height="200px" src="<?php echo '../'.$item->getPath();?>" alt="<?php echo $item->getName();?>">
-       </div> <?php
+        <form action="admin.php" method="post" name="form_img">
+            <input type="hidden" name="table_name" value="gallery">
+            <input type="hidden" name="id" value="<?php echo $item->getId(); ?>">
+            <input type="submit" name="del" value="Del">
+            <input type="submit" name="add" value="Add">
+        </form>
+       </div>
+
+    <?php
 }
 ?>
 

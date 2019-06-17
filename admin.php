@@ -21,3 +21,26 @@ $view = new \Controllers\View();
 
 $view->assign('admin', $allData);
 $view->display(__DIR__.'/Views/admin.php');
+
+if(isset($_POST['del']) && isset($_POST['id'])) {
+    foreach($allData['gallery'] as $image) {
+        if($_POST['id'] == $image->getId()) {
+            $image->delete();
+//            header("Refresh:0");
+        }
+    }
+}
+var_dump($_POST);
+if(isset($_POST['del'])) {
+    dataDelete($allData[$_POST['table_name']], $_POST['id']);
+}
+
+function dataDelete($data, $id)
+{
+    foreach ($data as $item) {
+        if($id == $item->getId()) {
+            $item->delete();
+            header("Refresh:0");
+        }
+    }
+}

@@ -19,7 +19,7 @@ class Gallery
     {
         $ret = [];
         foreach ($this->data as $item) {
-            $ret[] = new Image($item['name'], $item['path']);
+            $ret[] = new Image($item['id'], $item['name'], $item['path']);
         }
         return $ret;
     }

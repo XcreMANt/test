@@ -10,3 +10,4 @@ $view = new \Controllers\View();
 
 $view->assign('gallery', $gallery->getAll());
 $view->display(__DIR__.'/Views/gallery.php');
+

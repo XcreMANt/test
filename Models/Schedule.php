@@ -7,6 +7,7 @@ class Schedule
     protected $name;
     protected $departure;
     protected $arrival;
+    protected $id;
 
     /**
      * Schedule constructor.
@@ -14,11 +15,20 @@ class Schedule
      * @param $departure
      * @param $arrival
      */
-    public function __construct($name, $departure, $arrival)
+    public function __construct($id, $name, $departure, $arrival)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->departure = $departure;
         $this->arrival = $arrival;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
@@ -69,4 +79,9 @@ class Schedule
         $this->arrival = $arrival;
     }
 
+    public function delete()
+    {
+        $db = new \Models\DB('mysql:host=mysql;port=3306;dbname=test', 'root', 'root');
+        $db->query('delete from schedule where id=:id', [':id' => $this->id]);
+    }
 }

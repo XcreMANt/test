@@ -5,11 +5,7 @@ use PDO;
 
 class DB
 {
-
     public $dsn =  'mysql:host=mysql;port=3306;dbname=test';
-
-
-
 
     public $user = 'root';
     public $password = 'root';
@@ -18,8 +14,7 @@ class DB
     public function __construct($dsn, $user, $password)
     {
        $this->dbh = new PDO($dsn, $user, $password);
-       $this->dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-//       var_dump($this->dbh);
+//       $this->dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
 
     public function execute($sql)
@@ -33,7 +28,6 @@ class DB
         $sth = $this->dbh->prepare($sql);
         $sth->execute($data);
         return $sth->fetchAll();
-
     }
 
 }

@@ -19,9 +19,8 @@ class SheduleList
     {
         $ret = [];
         foreach ($this->data as $item) {
-            $ret[] = new Schedule($item['name'], $item['departure'], $item['arrival']);
+            $ret[] = new Schedule($item['id'], $item['name'], $item['departure'], $item['arrival']);
         }
         return $ret;
     }
-
 }

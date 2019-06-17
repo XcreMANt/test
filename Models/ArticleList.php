@@ -19,7 +19,7 @@ class ArticleList
     {
         $ret = [];
         foreach ($this->data as $item) {
-            $ret[] = new Article($item['title'], $item['author'], $item['text']);
+            $ret[] = new Article($item['id'], $item['title'], $item['author'], $item['text']);
         }
         return $ret;
     }

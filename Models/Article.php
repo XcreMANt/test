@@ -7,6 +7,7 @@ class Article
     protected $title;
     protected $author;
     protected $text;
+    protected $id;
 
     /**
      * Article constructor.
@@ -14,11 +15,20 @@ class Article
      * @param $author
      * @param $text
      */
-    public function __construct($title, $author, $text)
+    public function __construct($id, $title, $author, $text)
     {
+        $this->id = $id;
         $this->title = $title;
         $this->author = $author;
         $this->text = $text;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
