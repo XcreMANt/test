@@ -84,4 +84,11 @@ class Schedule
         $db = new \Models\DB('mysql:host=mysql;port=3306;dbname=test', 'root', 'root');
         $db->query('delete from schedule where id=:id', [':id' => $this->id]);
     }
+
+    public function add($data)
+    {
+        $db = new \Models\DB('mysql:host=mysql;port=3306;dbname=test', 'root', 'root');
+        $db->query('insert into schedule (name, departure, avvival) values (:name, :departure, :arrival)',
+            [':name' => $data['name'], 'departure' => $data['departure'], ':arrival' => $data['arrival']]);
+    }
 }

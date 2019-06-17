@@ -65,4 +65,10 @@ class Image
         $db = new \Models\DB('mysql:host=mysql;port=3306;dbname=test', 'root', 'root');
         $db->query('delete from images where id=:id', [':id' => $this->id]);
     }
+
+    public function add($data)
+    {
+        $db = new \Models\DB('mysql:host=mysql;port=3306;dbname=test', 'root', 'root');
+        $db->query('insert into images (name, path) values (:name, :path)', [':name' => $data['name'], ':path' => $data['path']]);
+    }
 }

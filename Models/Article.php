@@ -76,8 +76,7 @@ class Article
      */
     public function setText($text)
     {
-        $this->text = $text;
+        $db = new \Models\DB('mysql:host=mysql;port=3306;dbname=test', 'root', 'root');
+        $db->query('update articles set text=:text where id=:id', [':text' => $text, ':id' => $this->id]);
     }
-
-
 }

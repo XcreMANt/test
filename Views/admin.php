@@ -44,8 +44,9 @@
 <?php
 foreach ($admin['about'] as $item) {
     ?> <div class="article">
-            <?php echo $item->getText(); ?>
+
         <form action="admin.php" method="post" name="form_about">
+            <textarea name="text_field" cols="78" rows="10" required style="resize:none"><?php echo $item->getText(); ?></textarea>
             <input type="hidden" name="table_name" value="about">
             <input type="hidden" name="id" value="<?php echo $item->getId(); ?>">
             <input type="submit" name="edit" value="Edit">
@@ -64,12 +65,20 @@ foreach ($admin['schedule'] as $item) {
             <input type="hidden" name="table_name" value="schedule">
             <input type="hidden" name="id" value="<?php echo $item->getId(); ?>">
             <input type="submit" name="del" value="Del">
-            <input type="submit" name="edit" value="Edit">
-            <input type="submit" name="add" value="Add">
         </form>
         </div> <?php
 }
+?>
 
+<form action="admin.php" method="post" name="form_schedule">
+    <input type="hidden" name="table_name" value="schedule">
+    <input type="text" name="sched_name" placeholder="Название">
+    <input type="time" name="departure">
+    <input type="time" name="arrival">
+    <input type="submit" name="add" value="Add">
+</form>
+
+<?php
 foreach ($admin['gallery'] as $item) {
     ?> <div class="image">
            <img height="200px" src="<?php echo '../'.$item->getPath();?>" alt="<?php echo $item->getName();?>">
@@ -77,13 +86,16 @@ foreach ($admin['gallery'] as $item) {
             <input type="hidden" name="table_name" value="gallery">
             <input type="hidden" name="id" value="<?php echo $item->getId(); ?>">
             <input type="submit" name="del" value="Del">
-            <input type="submit" name="add" value="Add">
         </form>
        </div>
 
     <?php
 }
 ?>
+<form action="admin.php" method="post" name="form_img">
+    <input type="hidden" name="table_name" value="gallery">
+    <input type="submit" name="add" value="Add">
+</form>
 
 </body>
 

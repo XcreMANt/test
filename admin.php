@@ -30,9 +30,32 @@ if(isset($_POST['del']) && isset($_POST['id'])) {
         }
     }
 }
-var_dump($_POST);
+
 if(isset($_POST['del'])) {
     dataDelete($allData[$_POST['table_name']], $_POST['id']);
+}
+
+if(isset($_POST['edit'])) {
+    dataEdit($allData[$_POST['table_name']], $_POST['id'], $_POST['text_field']);
+}
+
+if(isset($_POST['add']) && ($_POST['table_name']) == 'schedule') {
+    $arr = [];
+    $arr['name'] = $_POST['sched_name'];
+    $arr['departure'] = $_POST['departure'];
+    $arr['arrival'] = $_POST['arrival'];
+
+    scheduleAdd($allData[$_POST['table_name']], $arr);
+}
+
+function dataEdit($data, $id, $text)
+{
+    foreach ($data as $item) {
+        if($id == $item->getId()) {
+            $item->setText($text);
+            header("Refresh:0");
+        }
+    }
 }
 
 function dataDelete($data, $id)
@@ -43,4 +66,12 @@ function dataDelete($data, $id)
             header("Refresh:0");
         }
     }
+}
+
+function scheduleAdd($data, $arr)
+{
+    $first = reset($data);
+    $first->add($arr);
+    header("Refresh:0");
+
 }

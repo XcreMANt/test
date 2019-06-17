@@ -14,7 +14,7 @@ class DB
     public function __construct($dsn, $user, $password)
     {
        $this->dbh = new PDO($dsn, $user, $password);
-//       $this->dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+       $this->dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
 
     public function execute($sql)
