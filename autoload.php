@@ -1,11 +1,9 @@
 <?php
 
-spl_autoload_register('autoloader');
-spl_autoload_extensions('.php');
-
-function autoloader($path)
+/**
+ * App\Models\User => ./App/Models/User.php
+ */
+function __autoload($class)
 {
-    $class = __DIR__.'/'.str_replace('\\', '/', $path).'.php';
-    include $class;
-
+    require __DIR__ . '/' .str_replace('\\', '/', $class) . '.php';
 }
