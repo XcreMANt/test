@@ -22,17 +22,19 @@ $view = new \Controllers\View();
 $view->assign('admin', $allData);
 $view->display(__DIR__.'/Views/admin.php');
 
-if(isset($_POST['del']) && isset($_POST['id'])) {
-    foreach($allData['gallery'] as $image) {
-        if($_POST['id'] == $image->getId()) {
-            $image->delete();
-//            header("Refresh:0");
-        }
+
+if(isset($_FILES['new_img']) && isset($_POST['add']) && ($_POST['table_name']) == 'gallery') {
+    if(0 == $_FILES['new_img']['errors']) {
+        move_uploaded_file($_FILES['new_img']['tmp_name'], __DIR__.'/images/'.$_FILES['new_img']['name']);
+        $arr = [];
+        $arr['name'] = $_FILES['new_img']['name'];
+        $arr['path'] = 'images/'.$_FILES['new_img']['name'];
+        imageAdd($allData[$_POST['table_name']], $arr);
     }
 }
 
 if(isset($_POST['del'])) {
-    dataDelete($allData[$_POST['table_name']], $_POST['id']);
+    dataDelete($allData[$_POST['table_name'     ]], $_POST['id']);
 }
 
 if(isset($_POST['edit'])) {
@@ -53,7 +55,7 @@ function dataEdit($data, $id, $text)
     foreach ($data as $item) {
         if($id == $item->getId()) {
             $item->setText($text);
-            header("Refresh:0");
+//            header("Refresh:0");
         }
     }
 }
@@ -63,7 +65,7 @@ function dataDelete($data, $id)
     foreach ($data as $item) {
         if($id == $item->getId()) {
             $item->delete();
-            header("Refresh:0");
+//            header("Refresh:0");
         }
     }
 }
@@ -72,6 +74,14 @@ function scheduleAdd($data, $arr)
 {
     $first = reset($data);
     $first->add($arr);
-    header("Refresh:0");
+//    header("Refresh:0");
+
+}
+
+function imageAdd($data, $arr)
+{
+    $first = reset($data);
+    $first->add($arr);
+//    header("Refresh:0");
 
 }

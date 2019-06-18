@@ -46,7 +46,7 @@ foreach ($admin['about'] as $item) {
     ?> <div class="article">
 
         <form action="admin.php" method="post" name="form_about">
-            <textarea name="text_field" cols="78" rows="10" required style="resize:none"><?php echo $item->getText(); ?></textarea>
+            <textarea name="text_field" cols="70" rows="13" required style="resize:none"><?php echo $item->getText(); ?></textarea>
             <input type="hidden" name="table_name" value="about">
             <input type="hidden" name="id" value="<?php echo $item->getId(); ?>">
             <input type="submit" name="edit" value="Edit">
@@ -92,8 +92,9 @@ foreach ($admin['gallery'] as $item) {
     <?php
 }
 ?>
-<form action="admin.php" method="post" name="form_img">
+<form action="admin.php" method="post" name="add_img" enctype="multipart/form-data">
     <input type="hidden" name="table_name" value="gallery">
+    <input type="file" name="new_img">
     <input type="submit" name="add" value="Add">
 </form>
 
