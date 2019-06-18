@@ -1,9 +1,11 @@
 <?php
 
-/**
- * App\Models\User => ./App/Models/User.php
- */
-function __autoload($class)
+spl_autoload_register('autoloader');
+spl_autoload_extensions('.php');
+
+function autoloader($path)
 {
-    require __DIR__ . '/' .str_replace('\\', '/', $class) . '.php';
+    $class = __DIR__.'/'.str_replace('\\', '/', $path).'.php';
+    include $class;
+
 }
