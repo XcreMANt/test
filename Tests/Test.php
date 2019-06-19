@@ -7,9 +7,9 @@ use App\Models\User;
 
 class Test
 {
-    public function findByTest($id)
+    public function findByIdTest($id)
     {
-        var_dump(User::findById($id));
+        var_dump(Article::findById($id));
     }
 
     public function findAllTest()
@@ -20,5 +20,10 @@ class Test
     public function findAllArticleTest()
     {
         var_dump(Article::findAll());
+    }
+
+    public function lastRecordsTest($count)
+    {
+        var_dump(Article::lastRecords($count));
     }
 }

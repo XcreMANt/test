@@ -26,4 +26,14 @@ abstract class Model
         return $res ?: false;
     }
 
+    public static function lastRecords($count)
+    {
+        $db = new Db();
+        $res = $db->query(
+            'SELECT * FROM ' . static::TABLE . ' order by id desc limit '. $count,
+            static::class
+        );
+        return $res ?: false;
+    }
+
 }

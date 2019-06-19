@@ -7,7 +7,12 @@ $users = \App\Models\User::findAll();
 //var_dump($users);
 
 $test = new \Tests\Test();
-//$test->findByTest(3);
-//$test->findAllArticleTest();
+//$test->findByIdTest(78);
+//echo $test->findAllArticleTest();
 
-$test->findAllTest();
+$articles = \App\Models\Article::lastRecords(3);
+
+//var_dump($articles);
+//echo $articles[2]->text;
+
+include __DIR__.'/App/Views/article.php';
