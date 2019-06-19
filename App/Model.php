@@ -16,4 +16,14 @@ abstract class Model
         );
     }
 
+    public static function findById($id)
+    {
+        $db = new Db();
+        $res = $db->query(
+            'SELECT * FROM ' . static::TABLE . ' where id=' . $id,
+            static::class
+        );
+        return $res ?: false;
+    }
+
 }
