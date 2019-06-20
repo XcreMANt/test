@@ -29,18 +29,30 @@
 </div>
 <?php
 
-foreach ($articles as $item) {
-
+if(isset($_GET['id'])) {
+?>    <div class="header">
+            <span class="headelem"><a href="/index.php">Главная</a></span>
+      </div>
+    <?php
+    foreach ($article as $item) {
     ?> <div class="article">
-                <a href="/article.php?id=<?php echo $item->id; ?>">Новость № <?php echo $item->id; ?> </a><br>
-
         <ul>
             <?php echo $item->text; ?>
         </ul>
-
     </div> <?php
-}
-?>
+    }
+} else {
+
+foreach ($articles as $item) {
+
+    ?> <div class="article">
+            <a href="/article.php?id=<?php echo $item->id; ?>">Новость № <?php echo $item->id; ?> </a><br>
+        <ul>
+            <?php echo $item->getShortText(); ?>
+        </ul>
+    </div> <?php
+    }
+}?>
 
 </body>
 

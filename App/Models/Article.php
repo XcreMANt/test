@@ -12,17 +12,20 @@ class Article extends Model
     public $author;
     public $text;
 
-    /**
-     * Article constructor.
-     * @param $title
-     * @param $author
-     * @param $text
-     */
-//    public function __construct($title, $author, $text)
-//    {
-//        $this->title = $title;
-//        $this->author = $author;
-//        $this->text = $text;
-//    }
+    public function getShortText()
+    {
+        $arr = explode(' ', $this->text);
+        $i = 0;
+        $short_arr = [];
+//        var_dump($arr);
+        while($i < 3 && $i < count($arr)) {
+            $short_arr[] = $arr[$i];
+            $i++;
+        }
+
+        $short_text = implode(' ', $short_arr);
+
+        return $short_text;
+    }
 
 }
