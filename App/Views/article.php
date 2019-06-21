@@ -32,17 +32,17 @@
 if(isset($_GET['id'])) {
 ?>    <div class="header">
             <span class="headelem"><a href="/index.php">Главная</a></span>
+            <span class="headelem"><a href="/admin.php">Админка</a></span>
       </div>
-    <?php
-    foreach ($article as $item) {
-    ?> <div class="article">
-        <ul>
-            <?php echo $item->text; ?>
-        </ul>
-    </div> <?php
-    }
+     <div class="article">
+            <?php echo $article->text; ?>
+       </div> <?php
+
 } else {
 
+ ?> <div class="header">
+       <span class="headelem"><a href="/admin.php">Админка</a></span>
+    </div> <?php
 foreach ($articles as $item) {
 
     ?> <div class="article">
