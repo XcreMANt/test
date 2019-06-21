@@ -1,7 +1,7 @@
 <?php
 
 require __DIR__ . '/autoload.php';
-$db = \App\Config::instance();
+$db = \App\Db::instance();
 
 //$users = \App\Models\User::findAll();
 
@@ -24,6 +24,7 @@ $user = new \App\Models\User();
 $user->name = 'Vasya';
 $user->email = 'v@pupkin.ru';
 $id = $user->insert();
-//var_dump($id);
+var_dump($id);
+//echo $db->lastInsertId();
 
 //include __DIR__.'/App/Views/article.php';

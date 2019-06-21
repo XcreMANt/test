@@ -62,8 +62,9 @@ abstract class Model
             ')VALUES(' . implode(',', array_keys($values)) . ')';
         $db = Db::instance();
         $db->execute($sql, $values);
-        $res = static::lastRecords(1);
-        return $res;
+//        $res = static::lastRecords(1);
+//        return $res;
+        $db->lastInsertId();
     }
 
 }

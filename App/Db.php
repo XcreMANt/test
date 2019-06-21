@@ -32,4 +32,9 @@ class Db
         return [];
     }
 
+    public function lastInsertId()
+    {
+        return $this->dbh->lastInsertId();
+    }
+
 }
