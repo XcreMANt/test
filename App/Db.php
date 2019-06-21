@@ -13,7 +13,8 @@ class Db
 
     protected function __construct()
     {
-        $this->dbh = new \PDO('mysql:host=mysql;dbname=test', 'root', 'root');
+        $conf =Config::instance();
+        $this->dbh = new \PDO('mysql:host='.$conf->data['host'].'; dbname='.$conf->data['dbname'], $conf->data['username'],$conf->data['password']);
         $this->dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
 

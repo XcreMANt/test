@@ -18,6 +18,7 @@ class Config
     {
         $conf = file(__DIR__.'/../config');
         foreach($conf as $item) {
+            $item = trim($item);
             list($k, $v ) = explode('=', $item);
             $this->data[$k] = $v;
         }
