@@ -2,6 +2,7 @@
 
 
 namespace App;
+use PDO;
 
 class Db
 {
@@ -13,6 +14,7 @@ class Db
     protected function __construct()
     {
         $this->dbh = new \PDO('mysql:host=mysql;dbname=test', 'root', 'root');
+        $this->dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
 
     public function execute($sql, $params = [])

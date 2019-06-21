@@ -19,10 +19,13 @@ abstract class Model
     public static function findById($id)
     {
         $db = Db::instance();
-        $res = $db->query(
+        $resArr = $db->query(
             'SELECT * FROM ' . static::TABLE . ' where id=' . $id,
             static::class
         );
+
+        $res = array_shift($resArr);
+
         return $res ?: false;
     }
 
@@ -67,4 +70,45 @@ abstract class Model
         $db->lastInsertId();
     }
 
+    public function update()
+    {
+        if($this->isNew()) {
+            return;
+        }
+
+        $set = [];
+        $values = [];
+        foreach ($this as $k => $v) {
+            if ('id' == $k) {
+                continue;
+            }
+            $set[] = $k.'=:'.$k;
+            $values[':'.$k] = $v;
+        }
+
+        $sql = 'update ' . static::TABLE .
+            ' set ' . implode(',', $set) .
+            ' where id=' . $this->id;
+        $db = Db::instance();
+        $db->execute($sql, $values);
+    }
+
+    public function save()
+    {
+        if($this->isNew()) {
+            $this->insert();
+            return 'inserted';
+        } else {
+            $this->update();
+            return 'updated';
+        }
+    }
+
+    public function delete()
+    {
+        $sql = 'delete from ' . static::TABLE .
+            ' where id=' . $this->id;
+        $db = Db::instance();
+        $db->execute($sql);
+    }
 }
