@@ -29,5 +29,4 @@ class DB
         $sth->execute($data);
         return $sth->fetchAll();
     }
-
 }
