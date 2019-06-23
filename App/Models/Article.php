@@ -9,7 +9,7 @@ class Article extends Model
     const TABLE = 'articles';
 
     public $title;
-    public $author;
+    public $author_id;
     public $text;
 
     public function getShortText()
@@ -26,6 +26,15 @@ class Article extends Model
         $short_text = implode(' ', $short_arr);
 
         return $short_text;
+    }
+
+    public function getAuthor()
+    {
+        if(isset($this->author_id)) {
+            return Author::findById($this->author_id);
+        }
+
+        return false;
     }
 
 }

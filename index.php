@@ -3,10 +3,21 @@
 require __DIR__ . '/autoload.php';
 $db = \App\Db::instance();
 
+$view = new \App\View();
+
+$view->title = 'Мой крутой сайт!';
+$view->users = \App\Models\User::findAll();
+
+$view->display(__DIR__ . '/App/Views/index.php');
+
+$view->articles = \App\Models\Article::findAll();
+
+var_dump(\App\Models\Author::findById(2));
+var_dump($view->articles->getAuthor()->name);
+
 //$users = \App\Models\User::findAll();
 
 //var_dump(\App\Models\User::asd());
-//
 //$users[0]->setName('Фрол');
 //var_dump($users);
 
@@ -15,7 +26,7 @@ $db = \App\Db::instance();
 //$test->findByIdTest(78);
 //echo $test->findAllArticleTest();
 
-$articles = \App\Models\Article::lastRecords(3);
+//$articles = \App\Models\Article::lastRecords(3);
 
 //var_dump($articles);
 //echo $articles[2]->text;
@@ -27,7 +38,7 @@ $articles = \App\Models\Article::lastRecords(3);
 //var_dump($id);
 //echo $db->lastInsertId();
 
-include __DIR__.'/App/Views/article.php';
+//include __DIR__.'/App/Views/article.php';
 
 //$user = \App\Models\User::findById(193);
 //$user = new \App\Models\User();

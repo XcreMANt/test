@@ -1,10 +1,11 @@
 <?php
 
 require __DIR__ . '/autoload.php';
+$db = \App\Db::instance();
 
-if(isset($_GET['id'])) {
+$view = new \App\View();
 
-    $article = \App\Models\Article::findById($_GET['id']);
+$view->title = 'Мой крутой сайт!';
+$view->articles = \App\Models\Article::findAll();
 
-    include __DIR__.'/App/Views/article.php';
-}
+$view->display(__DIR__ . '/App/Views/articlenew.php');
