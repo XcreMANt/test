@@ -1,19 +1,24 @@
 <?php
 
 require __DIR__ . '/autoload.php';
-$db = \App\Db::instance();
 
-$view = new \App\View();
+$url = $_SERVER['REQUEST_URI'];
 
-$view->title = 'Мой крутой сайт!';
-$view->users = \App\Models\User::findAll();
+$controller = new \App\Controllers\News();
 
-$view->display(__DIR__ . '/App/Views/index.php');
+$action = $_GET['action'] ?: 'Index';
 
-$view->articles = \App\Models\Article::findAll();
+$controller->action($action);
 
-var_dump(\App\Models\Author::findById(2));
-var_dump($view->articles->getAuthor()->name);
+
+//$view->users = \App\Models\User::findAll();
+
+//$view->display(__DIR__ . '/App/Views/index.php');
+
+//$view->articles = \App\Models\Article::findAll();
+//$view->display(__DIR__ . '/App/Views/articlenew.php');
+//var_dump(\App\Models\Author::findById(2));
+//var_dump($view->articles->getAuthor()->name);
 
 //$users = \App\Models\User::findAll();
 
