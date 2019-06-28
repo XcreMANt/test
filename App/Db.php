@@ -25,10 +25,10 @@ class Db
         return $res;
     }
 
-    public function query($sql, $params, $class)
+    public function query($sql, $class)
     {
         $sth = $this->dbh->prepare($sql);
-        $res = $sth->execute($params);
+        $res = $sth->execute();
         if (false !== $res) {
             return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
         }

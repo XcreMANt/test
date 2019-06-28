@@ -2,9 +2,24 @@
 
 namespace App;
 
-class View
+class View implements \Countable
 {
-    use Magic;
+    protected $data = [];
+
+    public function __set($k, $v)
+    {
+        $this->data[$k] = $v;
+    }
+
+    public function __get($k)
+    {
+        return $this->data[$k];
+    }
+
+    public function __isset($k)
+    {
+        return isset($this->data[$k]);
+    }
 
     public function render($template)
     {
@@ -18,6 +33,11 @@ class View
     public function display($template)
     {
         echo $this->render($template);
+    }
+
+    public function count()
+    {
+        return count($this->data);
     }
 
 }

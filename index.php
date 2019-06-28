@@ -10,7 +10,6 @@ $action = $_GET['action'] ?: 'Index';
 
 $controller->action($action);
 
-
 //$view->users = \App\Models\User::findAll();
 
 //$view->display(__DIR__ . '/App/Views/index.php');

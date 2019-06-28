@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title><?php echo $title; ?></title>
+    <title><?php echo $this->article->title; ?></title>
 
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -23,14 +23,13 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <?php echo $article->title; ?>
+        <?php echo $this->article->title; ?>
+        <?php if (!empty($this->author)): ?>
+            Автор: <?php echo $this->article->author->name; ?>
+        <?php endif; ?>
     </div>
     <div class="panel-body">
-
-        <?php if (!empty($article->author)): ?>
-            Автор: <?php echo $article->author->name; ?>
-        <?php endif; ?>
-
+        <?php echo $this->article->text; ?>
     </div>
 </div>
 

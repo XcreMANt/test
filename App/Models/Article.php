@@ -28,13 +28,41 @@ class Article extends Model
         return $short_text;
     }
 
-    public function getAuthor()
+    /**
+     * LAZY LOAD
+     *
+     * @param $k
+     * @return null
+     */
+    public function __get($k)
     {
-        if(isset($this->author_id)) {
-            return Author::findById($this->author_id);
+        switch ($k) {
+            case 'author':
+                return Author::findById($this->author_id);
+                break;
+            default:
+                return null;
         }
-
-        return false;
     }
+
+    public function __isset($k)
+    {
+        switch ($k) {
+            case 'author':
+                return !empty($this->author_id);
+                break;
+            default:
+                return false;
+        }
+    }
+
+//    public function getAuthor()
+//    {
+//        if(isset($this->author_id)) {
+//            return Author::findById($this->author_id);
+//        }
+//
+//        return false;
+//    }
 
 }

@@ -19,19 +19,20 @@
 </head>
 <body>
 
-<h1>Пользователи</h1>
+<h1>Все новости</h1>
 
-<?php foreach ($this->users as $user) : ?>
+<?php foreach ($this->news as $article) : ?>
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <?php if (!empty($user->name)) : ?>
-        <?php echo $user->name; ?>
+        <?php echo $article->title; ?>
+        <?php if (!empty($article->author)) : ?>
+        <?php echo $article->author->name; ?>
         <?php else : ?>
         -= Без имени =-
         <?php endif; ?>
     </div>
-    <div class="panel-body"><?php echo $user->email; ?></div>
+    <div class="panel-body"><?php echo $article->text; ?></div>
 </div>
 
 <?php endforeach; ?>
