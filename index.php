@@ -28,14 +28,9 @@ try {
     $action = $_GET['act'] ?: 'Index';
     $controller->action($action);
 } catch (\App\Exceptions\Db $e) {
-    $view = new View();
-    $view->ex = $e;
-    $view->display(__DIR__ . '/App/Views/error.php');
-//    echo $e->getMessage();
+    $controller->action('Exception', $e);
 } catch (\App\Exceptions\Error404 $e) {
-    $view = new View();
-    $view->ex = $e;
-    $view->display(__DIR__ . '/App/Views/error.php');
+    $controller->action('Exception', $e);
 }
 
 

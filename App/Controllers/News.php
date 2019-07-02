@@ -25,4 +25,11 @@ class News extends BaseController
         }
         $this->view->display(__DIR__ . '/../Views/one.php');
     }
+
+    protected function actionException(\Exception $e)
+    {
+            $this->view->ex = $e;
+            $this->view->display(__DIR__ . '/../Views/error.php');
+
+    }
 }

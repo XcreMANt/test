@@ -15,11 +15,11 @@ abstract class BaseController
         $this->view = new View();
     }
 
-    public function action($action)
+    public function action($action, $args = '')
     {
         $methodName = 'action' . $action;
         $this->beforeAction();
-        return $this->$methodName();
+        return $this->$methodName($args);
     }
 
     abstract protected function beforeAction();
