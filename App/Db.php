@@ -13,9 +13,14 @@ class Db
 
     protected function __construct()
     {
-        $conf =Config::instance();
-        $this->dbh = new \PDO('mysql:host='.$conf->data['host'].'; dbname='.$conf->data['dbname'], $conf->data['username'],$conf->data['password']);
-        $this->dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        $conf = Config::instance();
+        try {
+            $this->dbh = new \PDO('mysql:host='.$conf->data['host'].'; dbname='.$conf->data['dbname'], $conf->data['username'],$conf->data['password']);
+            $this->dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        } catch (\PDOException $e) {
+            throw new \App\Exceptions\Db('исключение'.$e->getMessage());
+        }
+
     }
 
     public function execute($sql, $params = [])

@@ -1,14 +1,43 @@
 <?php
 
+use App\View;
+
 require __DIR__ . '/autoload.php';
 
 $url = $_SERVER['REQUEST_URI'];
 
-$controller = new \App\Controllers\News();
+//switch ($_GET['ctrl']) {
+//    case 'admin':
+//        $controller = new \App\Controllers\AdminController();
+//        $action = $_GET['act'] ?: 'AllNews';
+//        break;
+//    case 'news':
+//        $controller = new \App\Controllers\News();
+//        $action = $_GET['act'] ?: 'Index';
+//        break;
+//    default:
+//        $controller = new \App\Controllers\News();
+//        $action = $_GET['act'] ?: 'Index';
+//}
 
-$action = $_GET['action'] ?: 'Index';
+?>
+<a href="admin.php?act=allnews">Админка</a>
+<?php
+try {
+    $controller = new \App\Controllers\News();
+    $action = $_GET['act'] ?: 'Index';
+    $controller->action($action);
+} catch (\App\Exceptions\Db $e) {
+    $view = new View();
+    $view->ex = $e;
+    $view->display(__DIR__ . '/App/Views/error.php');
+//    echo $e->getMessage();
+} catch (\App\Exceptions\Error404 $e) {
+    $view = new View();
+    $view->ex = $e;
+    $view->display(__DIR__ . '/App/Views/error.php');
+}
 
-$controller->action($action);
 
 //$view->users = \App\Models\User::findAll();
 
