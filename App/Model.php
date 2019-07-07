@@ -10,10 +10,12 @@ abstract class Model
     public static function findAll()
     {
         $db = Db::instance();
-        return $db->query(
-            'SELECT * FROM ' . static::TABLE,
-            static::class
-        );
+        $res = [];
+        foreach($db->queryEach('SELECT * FROM ' . static::TABLE, static::class)
+                as $elem) {
+            $res[] = $elem;
+        };
+        return $res;
     }
 
     public static function findById($id)
@@ -33,13 +35,13 @@ abstract class Model
     {
         $db = Db::instance();
         $res = $db->query(
-            'SELECT * FROM ' . static::TABLE . ' order by id desc limit '. $count,
+            'SELECT * FROM ' . static::TABLE . ' order by id desc limit ' . $count,
             static::class
         );
         return $res ?: false;
     }
 
-        public function isNew()
+    public function isNew()
     {
         return empty($this->id);
     }
@@ -57,7 +59,7 @@ abstract class Model
                 continue;
             }
             $columns[] = $k;
-            $values[':'.$k] = $v;
+            $values[':' . $k] = $v;
         }
 
         $sql = 'INSERT INTO ' . static::TABLE .
@@ -72,7 +74,7 @@ abstract class Model
 
     public function update()
     {
-        if($this->isNew()) {
+        if ($this->isNew()) {
             return;
         }
 
@@ -82,8 +84,8 @@ abstract class Model
             if ('id' == $k) {
                 continue;
             }
-            $set[] = $k.'=:'.$k;
-            $values[':'.$k] = $v;
+            $set[] = $k . '=:' . $k;
+            $values[':' . $k] = $v;
         }
 
         $sql = 'update ' . static::TABLE .
@@ -95,7 +97,7 @@ abstract class Model
 
     public function save()
     {
-        if($this->isNew()) {
+        if ($this->isNew()) {
             $this->insert();
             return 'inserted';
         } else {

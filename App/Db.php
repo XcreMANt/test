@@ -40,6 +40,18 @@ class Db
         return [];
     }
 
+    public function queryEach($sql, $class)
+    {
+        $sth = $this->dbh->prepare($sql);
+        $sth->setFetchMode(PDO::FETCH_CLASS,$class);
+        $res = $sth->execute();
+
+        while (false !== $res && $row = $sth->fetch()) {
+            yield $row;
+        }
+        return [];
+    }
+
     public function lastInsertId()
     {
         return $this->dbh->lastInsertId();
