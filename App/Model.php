@@ -10,12 +10,7 @@ abstract class Model
     public static function findAll()
     {
         $db = Db::instance();
-        $res = [];
-        foreach($db->queryEach('SELECT * FROM ' . static::TABLE, static::class)
-                as $elem) {
-            $res[] = $elem;
-        };
-        return $res;
+        yield from $db->queryEach('SELECT * FROM ' . static::TABLE, static::class);
     }
 
     public static function findById($id)
